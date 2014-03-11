@@ -1,10 +1,19 @@
-{{#each}}
-  <h2>{{ name }}</h2>
-  <img src="http://placekitten.com/100/100" />
-  <h4>Favs</h4>
-  <ul>
-    {{#each toys}}
-      <li>{{ name }}</li>
-    {{/each}}
-  </ul>
-{{/each}}
+{{#unless hidden}}
+  <button {{action "hide"}}>Hide Images</button>
+  {{#each}}
+    <h2>{{ name }}</h2>
+      <img src="http://placekitten.com/100/100" 
+        {{action "hoverKitten" this on="mouseEnter"}} />
+    <button href="#likeKitten" {{action "deleteKitten" this }}>Like</button>
+    <h4>Favs</h4>
+    <ul>
+      {{#each toys}}
+        <li>{{ name }}</li>
+      {{/each}}
+    </ul>
+  {{/each}}
+{{else}}
+<button {{action "show"}}>Show Images</button>
+{{/unless}}
+
+
