@@ -1,5 +1,6 @@
 App.KittensRoute = Ember.Route.extend({
   model: function () {
-    return [1,2,3,4];
+    debugger;
+    return this.store.find("kitten")
   }
 })
