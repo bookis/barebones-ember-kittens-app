@@ -1,7 +1,7 @@
 {{#unless hidden}}
   <button {{action "hide"}}>Hide Images</button>
   {{#each}}
-    <h2>{{ name }}</h2>
+    <h2>{{ fullName }}</h2>
       <img src="http://placekitten.com/100/100" 
         {{action "hoverKitten" this on="mouseEnter"}} />
     <button href="#likeKitten" {{action "deleteKitten" this }}>Like</button>
@@ -11,6 +11,7 @@
         <li>{{ name }}</li>
       {{/each}}
     </ul>
+    {{input type="text" value=name}}
   {{/each}}
 {{else}}
 <button {{action "show"}}>Show Images</button>
